@@ -1,0 +1,19 @@
+contador = 1
+
+while contador <= 5:
+    print("Número:", contador)
+    contador += 1  
+
+print("Fin del bucle")
+
+#EJEMPLO 2
+
+numero_secreto = 7
+intento = 0
+
+while intento != numero_secreto:
+    intento = int(input("Adivina el número (1-10): "))
+    if intento != numero_secreto:
+        print("Incorrecto, intenta de nuevo.")
+
+print("¡Correcto! El número era", numero_secreto)
