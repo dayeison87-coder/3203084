@@ -1,0 +1,49 @@
+#Manejo de excepciones (try, except)
+#Ejemplo 1: Capturar división por cero
+try:
+    resultado = 10 / 0
+except ZeroDivisionError:
+    print("Error: No se puede dividir entre cero")
+
+
+#Ejemplo 2: Capturar error al convertir datos
+try:
+    edad = int("veinte")
+except ValueError:
+    print("Error: Debes ingresar un número válido")
+
+
+
+#Bloques else y finally
+#Ejemplo 1: Uso de else
+try:
+    numero = int(input("Ingresa un número: "))
+except ValueError:
+    print("No ingresaste un número válido")
+else:
+    print(f"El número ingresado fue {numero}")
+
+#Ejemplo 2: Uso de finally
+try:
+    archivo = open("datos.txt", "r")
+    contenido = archivo.read()
+except FileNotFoundError:
+    print("El archivo no existe")
+finally:
+    print("Ejecución terminada (con o sin error)")
+
+
+#Levantamiento de excepciones (raise)
+#Ejemplo 1: Excepción personalizada en función
+#def dividir(a, b):
+    if b == 0:
+        raise ValueError("No se puede dividir entre cero")
+    return a / b
+
+print(dividir(10, 2))
+
+#Ejemplo 2: Validación de edad
+def verificar_edad(edad):
+    if edad < 18:
+        raise Exception("Debes ser mayor de edad para continuar")
+    print("Acceso permitido")
