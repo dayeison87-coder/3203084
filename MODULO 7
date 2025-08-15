@@ -1,0 +1,92 @@
+#FUNCIONES
+#EJEN 1
+
+def saludar(nombre):
+    print(f"Hola, {nombre}!")
+
+saludar("Juan")
+
+#EJEN 2
+def sumar(a, b):
+    print("La suma es:", a + b)
+
+sumar(5, 3)
+
+
+
+#RETORNO
+#EJEM1
+def sumar(a, b):
+    return a + b
+
+resultado = sumar(4, 6)
+print("Resultado:", resultado)
+
+#EJEM2
+def area_rectangulo(base, altura):
+    return base * altura
+
+print("Área:", area_rectangulo(5, 3))
+
+
+
+#SIN RETORNO
+#EJEM 1
+def mostrar_mensaje():
+    print("Bienvenido al sistema")
+
+mostrar_mensaje()
+
+#EJEM2
+def mostrar_lista(lista):
+    for item in lista:
+        print(item)
+
+mostrar_lista(["Manzana", "Pera", "Uva"])
+
+
+
+#AMBITO DE LAS VARIABLES LOCALES
+#EJEM1
+def mi_funcion():
+    mensaje = "Hola desde dentro"
+    print(mensaje)
+
+mi_funcion()
+
+#EJEM2 GLOBAL
+mensaje = "Hola global"
+
+def mi_funcion():
+    print(mensaje)
+
+mi_funcion()
+print(mensaje)
+
+
+
+#ARGUMENTOS Y PARAMETROS
+#EJEM1 Argumentos posicionales
+def datos_persona(nombre, edad):
+    print(f"Nombre: {nombre}, Edad: {edad}")
+
+datos_persona("Ana", 25)
+
+#EJEM2 Argumentos con valor predeterminado
+def saludo(nombre="Invitado"):
+    print(f"Hola, {nombre}")
+
+saludo()
+saludo("Carlos")
+
+
+
+
+#FUNCIONES ANONIMAS
+#EJEM1 
+suma = lambda a, b: a + b
+print(suma(3, 5))
+
+#EJEM2
+doblar = lambda x: x * 2
+print(doblar(7))
