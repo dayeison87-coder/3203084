@@ -1,0 +1,37 @@
+for i in range(1, 6):
+    print("Número:", i)
+
+print("Fin del bucle")
+
+#EJERCICIO 2
+
+# Lista de productos y precios
+productos = [
+    {"nombre": "Manzana", "precio": 800},
+    {"nombre": "Pera", "precio": 1200},
+    {"nombre": "Uva", "precio": 1500},
+    {"nombre": "Sandía", "precio": 3000},
+    {"nombre": "Mango", "precio": 2000}
+]
+
+total = 0
+productos_caros = []
+
+print("Lista de productos:\n")
+
+# Recorremos la lista con for
+for producto in productos:
+    nombre = producto["nombre"]
+    precio = producto["precio"]
+    print(f"- {nombre} cuesta ${precio}")
+
+    # Sumar al total
+    total += precio
+
+    # Guardar los que valen más de 1500
+    if precio > 1500:
+        productos_caros.append(nombre)
+
+# Mostrar resultados
+print("\nTotal de la compra: $", total)
+print("Productos caros:", ", ".join(productos_caros))
