@@ -1,0 +1,50 @@
+#PUNTO 1
+nombre = "Juan"
+print("Hola", nombre)
+
+saludo = "Hola " + nombre + "!"
+print(saludo)
+
+print(nombre.upper())   
+print(nombre.lower())   
+print("Largo del nombre:", len(nombre))
+
+
+#PUNTO 2
+numero_str = "55"
+numero_int = int(numero_str)
+print("Número entero:", numero_int)
+
+numero_float = float(numero_int)
+print("Número flotante:", numero_float)
+
+texto = str(numero_float)
+print("Número como texto:", texto)
+
+
+#PUNTO 3
+es_mayor = 18 > 17
+print("¿Es mayor de edad?", es_mayor)  
+
+llueve = False
+print("¿Está lloviendo?", llueve)
+
+tiene_permiso = True
+puede_salir = es_mayor and tiene_permiso
+print("¿Puede salir?", puede_salir)
+
+
+#PUNTO 4
+a = "10"
+b = "5"
+resultado = int(a) + int(b)
+print("Suma:", resultado)
+
+base = "4"
+altura = "3"
+área = (float(base) * float(altura)) / 2
+print("Área del triángulo:", área)
+
+edad = input("¿Cuál es tu edad? ")
+puede_votar = int(edad) >= 18
+print("¿Puede votar?", puede_votar)
