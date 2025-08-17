@@ -1,0 +1,107 @@
+#MODULO 1
+print("¡Bienvenido/a al codigo de yeison")
+nombre = input("¿Cuál es tu nombre? ")
+print("Hola", nombre + ", ¡mucho gusto en conocerte!")
+
+#MODULO 2
+nombre = "Ana"
+edad = 23
+altura = 1.68
+es_estudiante = True
+
+print("Nombre:", nombre)
+print("Edad:", edad)
+print("Altura:", altura, "m")
+print("¿Es estudiante?", es_estudiante)
+
+
+#MODULO 3
+frutas = ["manzana", "banana", "pera"]
+print("Primera fruta:", frutas[0])
+
+
+dias = ("Lunes", "Martes", "Miércoles")
+print("Segundo día:", dias[1])
+
+persona = {
+    "nombre": "Carlos",
+    "edad": 30,
+    "ciudad": "Bogotá"
+}
+print("Nombre:", persona["nombre"])
+
+
+#MODULO 4
+a = 10
+b = 3
+
+print("Suma:", a + b)
+print("Resta:", a - b)
+print("Multiplicación:", a * b)
+print("División:", a / b)
+print("Módulo:", a % b)
+print("Potencia:", a ** b)
+print("Mayor que:", a > b)
+print("Igualdad:", a == b)
+
+
+#MODULO 5
+edad = int(input("¿Cuántos años tienes? "))
+
+if edad >= 18:
+    print("Eres mayor de edad.")
+else:
+    print("Eres menor de edad.")
+
+
+#MODULO 6
+print("Números del 1 al 5:")
+for i in range(1, 6):
+    print(i)
+
+
+contador = 0
+print("Contando hasta 3:")
+while contador < 3:
+    print("Contador:", contador)
+    contador += 1
+
+
+#MODULO 7
+def saludar(nombre):
+    print("Hola", nombre + "!")
+
+usuario = input("¿Tu nombre? ")
+saludar(usuario)
+
+
+#MODULO 8
+try:
+    numero = int(input("Ingresa un número entero: "))
+    resultado = 10 / numero
+    print("Resultado:", resultado)
+except ValueError:
+    print("¡Eso no es un número entero!")
+except ZeroDivisionError:
+    print("No se puede dividir entre cero.")
+
+
+#MODULO 9
+import math
+
+numero = float(input("Ingresa un número: "))
+raiz = math.sqrt(numero)
+print("La raíz cuadrada de", numero, "es", raiz)
+
+
+#MODULO10
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+
+    def saludar(self):
+        print("Hola, soy", self.nombre, "y tengo", self.edad, "años.")
+
+persona1 = Persona("Luis", 25)
+persona1.saludar()
