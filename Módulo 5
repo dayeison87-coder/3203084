@@ -1,0 +1,83 @@
+#Condicional if (sintaxis básica)
+# Ejemplo 1
+numero = 5
+if numero > 0:
+    print("El número es positivo")
+
+# Ejemplo 2
+edad = 20
+if edad >= 18:
+    print("Acceso permitido")
+
+
+#Condicional else (alternativa)
+# Ejemplo 1
+numero = -3
+if numero > 0:
+    print("Positivo")
+else:
+    print("Negativo")
+
+# Ejemplo 2
+contraseña = "1234"
+if contraseña == "admin":
+    print("Bienvenido")
+else:
+    print("Contraseña incorrecta")
+
+
+#Condicional elif (múltiples condiciones)
+# Ejemplo 1:
+nota = 85
+if nota >= 90:
+    print("Excelente")
+elif nota >= 70:
+    print("Aprobado")
+else:
+    print("Reprobado")
+
+# Ejemplo 2: 
+dia = "martes"
+if dia == "lunes":
+    print("Inicio de semana")
+elif dia == "viernes":
+    print("Casi fin de semana")
+else:
+    print("Otro día")
+
+
+#Condicionales anidadas (if dentro de if)
+# Ejemplo 1
+edad = 20
+permiso = True
+if edad >= 18:
+    if permiso:
+        print("Acceso concedido")
+    else:
+        print("Necesitas permiso")
+else:
+    print("No tienes la edad suficiente")
+
+# Ejemplo 2
+usuario = "admin"
+clave = "1234"
+if usuario == "admin":
+    if clave == "1234":
+        print("Login exitoso")
+    else:
+        print("Clave incorrecta")
+else:
+    print("Usuario no encontrado")
+
+
+# Operadores lógicos (and, or, not)
+# Ejemplo 1
+edad = 25
+if edad >= 18 and edad <= 30:
+    print("Edad válida para la beca")
+
+# Ejemplo 2
+usuario = "invitado"
+activo = False
+if usuario == "admin" or not activo:
+    print("Acceso restringido")
