@@ -1,0 +1,4 @@
+# id|nombre|precio|stock
+1|Camiseta|30000.0|50
+2|Pantalón|80000.0|30
+3|Zapatos|150000.0|20
