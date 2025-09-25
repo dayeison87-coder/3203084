@@ -1,31 +1,71 @@
-class Materia:
-    def __init__(self, nombre, creditos):
-        self.nombre = nombre
-        self.creditos = creditos
-
-class Estudiante:
+class Categoria:
     def __init__(self, nombre):
         self.nombre = nombre
-        self.calificaciones = []
+        self.productos = []
 
-    def agregar_calificacion(self, calificacion):
-        self.calificaciones.append(calificacion)
+    def agregar_producto(self, producto):
+        self.productos.append(producto)
 
-    def promedio_ponderado(self):
-        total = sum(c.nota * c.materia.creditos for c in self.calificaciones)
-        creditos = sum(c.materia.creditos for c in self.calificaciones)
-        return total / creditos if creditos > 0 else 0
+    def __str__(self):
+        return f"Categoría: {self.nombre}, Productos: {len(self.productos)}"
 
-class Calificacion:
-    def __init__(self, materia, nota):
-        self.materia = materia
-        self.nota = nota
+class Producto:
+    def __init__(self, nombre, precio, stock=0):
+        self.nombre = nombre
+        self.precio = precio
+        self.stock = stock
 
-m1 = Materia("Matemáticas", 3)
-m2 = Materia("Historia", 2)
+    def __str__(self):
+        return f"{self.nombre} - ${self.precio:.2f} (Stock: {self.stock})"
 
-e1 = Estudiante("Ana")
-e1.agregar_calificacion(Calificacion(m1, 4.5))
-e1.agregar_calificacion(Calificacion(m2, 3.5))
+class Inventario:
+    def __init__(self):
+        self.categorias = []
 
-print("Promedio ponderado de Ana:", e1.promedio_ponderado())
+    def agregar_categoria(self, categoria):
+        self.categorias.append(categoria)
+
+    def buscar_producto(self, nombre_producto):
+        for categoria in self.categorias:
+            for producto in categoria.productos:
+                if producto.nombre.lower() == nombre_producto.lower():
+                    return producto
+        return None
+
+    def reporte_stock(self):
+        print("=== Reporte de Stock ===")
+        for categoria in self.categorias:
+            print(f"\n📂 {categoria.nombre}:")
+            for producto in categoria.productos:
+                print(f" - {producto.nombre}: {producto.stock} unidades")
+        print("=========================")
+
+
+
+if __name__ == "__main__":
+  
+    cat_electronica = Categoria("Electrónica")
+    cat_ropa = Categoria("Ropa")
+
+ 
+    p1 = Producto("Laptop", 3000, stock=10)
+    p2 = Producto("Smartphone", 1200, stock=25)
+    p3 = Producto("Camiseta", 50, stock=100)
+    p4 = Producto("Jeans", 80, stock=60)
+
+    cat_electronica.agregar_producto(p1)
+    cat_electronica.agregar_producto(p2)
+    cat_ropa.agregar_producto(p3)
+    cat_ropa.agregar_producto(p4)
+
+    inventario = Inventario()
+    inventario.agregar_categoria(cat_electronica)
+    inventario.agregar_categoria(cat_ropa)
+    inventario.reporte_stock()
+
+    buscado = "laptop"
+    producto = inventario.buscar_producto(buscado)
+    if producto:
+        print(f"\nProducto encontrado: {producto}")
+    else:
+        print(f"\nNo se encontró el producto '{buscado}'")
